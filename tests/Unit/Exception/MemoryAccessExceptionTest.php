@@ -28,7 +28,7 @@ class MemoryAccessExceptionTest extends TestCase
     {
         $message = 'Test memory access error message';
         $exception = new MemoryAccessException($message);
-        
+
         $this->assertEquals($message, $exception->getMessage());
     }
 
@@ -39,11 +39,11 @@ class MemoryAccessExceptionTest extends TestCase
     {
         $address = 0x8000;
         $exception = MemoryAccessException::invalidAddress($address);
-        
+
         $this->assertStringContainsString(
             dechex($address),
             $exception->getMessage(),
             '异常消息应该包含地址的十六进制表示'
         );
     }
-} 
+}

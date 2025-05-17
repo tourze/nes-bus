@@ -28,7 +28,7 @@ class TimingExceptionTest extends TestCase
     {
         $message = 'Test timing error message';
         $exception = new TimingException($message);
-        
+
         $this->assertEquals($message, $exception->getMessage());
     }
-} 
+}

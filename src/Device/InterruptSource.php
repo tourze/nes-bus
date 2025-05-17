@@ -9,7 +9,7 @@ namespace Tourze\NES\Bus\Device;
  * 
  * 定义可产生中断的设备必须实现的功能
  */
-interface InterruptSource
+interface InterruptSource extends DeviceInterface
 {
     /**
      * NMI中断类型常量（不可屏蔽中断）

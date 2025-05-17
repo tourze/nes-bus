@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tourze\NES\Bus\Tests\Unit\Device;
 
 use PHPUnit\Framework\TestCase;
+use Tourze\NES\Bus\Device\DeviceInterface;
 use Tourze\NES\Bus\Device\InterruptSource;
 
 class InterruptSourceTest extends TestCase
@@ -16,6 +17,12 @@ class InterruptSourceTest extends TestCase
     {
         // 使用反射API检查接口
         $reflection = new \ReflectionClass(InterruptSource::class);
+        
+        // 检查接口是否继承自DeviceInterface
+        $this->assertTrue(
+            $reflection->implementsInterface(DeviceInterface::class),
+            'InterruptSource应该继承自DeviceInterface'
+        );
         
         // 检查接口是否定义了hasInterrupt方法
         $this->assertTrue(
@@ -56,4 +63,4 @@ class InterruptSourceTest extends TestCase
             'clearInterrupt方法应该返回void类型'
         );
     }
-} 
+}

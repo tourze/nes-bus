@@ -27,7 +27,7 @@ class BusExceptionTest extends TestCase
     {
         $message = 'Test bus error message';
         $exception = new BusException($message);
-        
+
         $this->assertEquals($message, $exception->getMessage());
     }
-} 
+}

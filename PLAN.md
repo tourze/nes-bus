@@ -20,62 +20,62 @@ NES系统中有两条主要总线：
 nes-bus/
 ├── src/
 │   ├── Bus/                      # 总线实现
-│   │   ├── BusInterface.php      # 总线通用接口 ⬜
-│   │   ├── AbstractBus.php       # 总线抽象基类 ⬜
-│   │   ├── CpuBus.php            # CPU总线实现 ⬜
-│   │   └── PpuBus.php            # PPU总线实现 ⬜
+│   │   ├── BusInterface.php      # 总线通用接口 ✅
+│   │   ├── AbstractBus.php       # 总线抽象基类 ✅
+│   │   ├── CpuBus.php            # CPU总线实现 ✅
+│   │   └── PpuBus.php            # PPU总线实现 ✅
 │   ├── Memory/                   # 内存管理
-│   │   ├── MemoryInterface.php   # 内存接口 ⬜
-│   │   ├── MemoryMap.php         # 内存映射管理 ⬜
-│   │   ├── Ram.php               # RAM实现 ⬜
-│   │   └── AddressDecoder.php    # 地址解码器 ⬜
+│   │   ├── MemoryInterface.php   # 内存接口 ✅
+│   │   ├── MemoryMap.php         # 内存映射管理 ✅
+│   │   ├── Ram.php               # RAM实现 ✅
+│   │   └── AddressDecoder.php    # 地址解码器 ✅
 │   ├── Device/                   # 设备接口
-│   │   ├── DeviceInterface.php   # 设备通用接口 ⬜
-│   │   ├── InterruptSource.php   # 中断源接口 ⬜
-│   │   └── AddressableDevice.php # 可寻址设备接口 ⬜
+│   │   ├── DeviceInterface.php   # 设备通用接口 ✅
+│   │   ├── InterruptSource.php   # 中断源接口 ✅
+│   │   └── AddressableDevice.php # 可寻址设备接口 ✅
 │   ├── Exception/                # 异常处理
-│   │   ├── BusException.php      # 总线异常基类 ⬜
-│   │   ├── MemoryAccessException.php # 内存访问异常 ⬜
-│   │   └── TimingException.php   # 时序异常 ⬜
+│   │   ├── BusException.php      # 总线异常基类 ✅
+│   │   ├── MemoryAccessException.php # 内存访问异常 ✅
+│   │   └── TimingException.php   # 时序异常 ✅
 │   ├── Event/                    # 事件系统
-│   │   ├── EventInterface.php    # 事件接口 ⬜
-│   │   ├── EventDispatcher.php   # 事件分发器 ⬜
-│   │   └── BusEvent.php          # 总线事件定义 ⬜
+│   │   ├── EventInterface.php    # 事件接口 ✅
+│   │   ├── EventDispatcher.php   # 事件分发器 ✅
+│   │   └── BusEvent.php          # 总线事件定义 ✅
 │   └── Timing/                   # 时序控制
-│       ├── ClockInterface.php    # 时钟接口 ⬜
+│       ├── ClockInterface.php    # 时钟接口 ✅
 │       ├── CycleCounter.php      # 周期计数器 ⬜
 │       └── TimingController.php  # 时序控制器 ⬜
 ├── tests/                        # 测试目录
 │   ├── Unit/                     # 单元测试
-│   │   ├── Bus/                  # 总线测试 ⬜
-│   │   ├── Memory/               # 内存测试 ⬜
-│   │   └── Timing/               # 时序测试 ⬜
+│   │   ├── Bus/                  # 总线测试 ✅
+│   │   ├── Memory/               # 内存测试 ✅
+│   │   └── Timing/               # 时序测试 ✅
 │   └── Integration/              # 集成测试
 │       └── BusIntegrationTest.php # 总线集成测试 ⬜
-└── README.md                     # 文档 ⬜
+└── README.md                     # 文档 ✅
 ```
 
 ## 3. 模块分层设计
 
 1. **接口层**
-   - `BusInterface` - 定义总线的公共接口 ⬜
-   - `MemoryInterface` - 定义内存访问接口 ⬜
-   - `DeviceInterface` - 定义连接到总线的设备接口 ⬜
-   - `InterruptSource` - 定义中断源的接口 ⬜
-   - `ClockInterface` - 定义时钟信号接口 ⬜
+   - `BusInterface` - 定义总线的公共接口 ✅
+   - `MemoryInterface` - 定义内存访问接口 ✅
+   - `DeviceInterface` - 定义连接到总线的设备接口 ✅
+   - `InterruptSource` - 定义中断源的接口 ✅
+   - `ClockInterface` - 定义时钟信号接口 ✅
 
 2. **抽象层**
-   - `AbstractBus` - 提供基本总线功能和共享方法 ⬜
+   - `AbstractBus` - 提供基本总线功能和共享方法 ✅
 
 3. **实现层**
-   - `CpuBus` - CPU总线的具体实现 ⬜
-   - `PpuBus` - PPU总线的具体实现 ⬜
-   - `Ram` - RAM内存的实现 ⬜
-   - `MemoryMap` - 内存映射实现 ⬜
+   - `CpuBus` - CPU总线的具体实现 ✅
+   - `PpuBus` - PPU总线的具体实现 ✅
+   - `Ram` - RAM内存的实现 ✅
+   - `MemoryMap` - 内存映射实现 ✅
 
 4. **事件系统**
-   - `EventDispatcher` - 处理总线上的事件通知 ⬜
-   - `BusEvent` - 总线事件类型定义 ⬜
+   - `EventDispatcher` - 处理总线上的事件通知 ✅
+   - `BusEvent` - 总线事件类型定义 ✅
 
 5. **时序控制**
    - `CycleCounter` - 处理CPU和PPU时钟周期 ⬜
@@ -85,78 +85,78 @@ nes-bus/
 
 ### 接口与抽象类
 
-- **BusInterface**：定义总线的基本操作 ⬜
+- **BusInterface**：定义总线的基本操作 ✅
   - 方法：`read(int $address): int` - 从总线读取数据
   - 方法：`write(int $address, int $value): void` - 向总线写入数据
   - 方法：`attachDevice(DeviceInterface $device, int $startAddress, int $endAddress): void` - 连接设备到总线
   - 方法：`detachDevice(DeviceInterface $device): void` - 从总线断开设备
   - 方法：`handleInterrupt(int $type): void` - 处理中断信号
 
-- **MemoryInterface**：定义内存访问操作 ⬜
+- **MemoryInterface**：定义内存访问操作 ✅
   - 方法：`read(int $address): int` - 读取内存
   - 方法：`write(int $address, int $value): void` - 写入内存
   - 方法：`getSize(): int` - 获取内存大小
 
-- **DeviceInterface**：定义连接到总线的设备 ⬜
+- **DeviceInterface**：定义连接到总线的设备 ✅
   - 方法：`getBusId(): string` - 获取设备在总线上的标识
   - 方法：`reset(): void` - 重置设备状态
 
-- **AddressableDevice**：扩展DeviceInterface，表示可寻址设备 ⬜
+- **AddressableDevice**：扩展DeviceInterface，表示可寻址设备 ✅
   - 方法：`read(int $address): int` - 设备读取操作
   - 方法：`write(int $address, int $value): void` - 设备写入操作
   - 方法：`getAddressRange(): array` - 获取设备的地址范围
 
-- **InterruptSource**：定义可产生中断的设备 ⬜
+- **InterruptSource**：定义可产生中断的设备 ✅
   - 方法：`hasInterrupt(): bool` - 检查是否有待处理的中断
   - 方法：`getInterruptType(): int` - 获取中断类型
   - 方法：`clearInterrupt(): void` - 清除中断标志
 
-- **AbstractBus**：总线抽象基类 ⬜
+- **AbstractBus**：总线抽象基类 ✅
   - 属性：设备映射表、中断源列表、事件分发器
   - 功能：实现基本总线操作，提供读写和中断处理能力
 
 ### 具体实现类
 
-- **CpuBus**：CPU总线实现 ⬜
+- **CpuBus**：CPU总线实现 ✅
   - 支持地址范围：0x0000-0xFFFF
   - 处理CPU相关的内存映射
   - 管理NMI、IRQ、RESET中断
 
-- **PpuBus**：PPU总线实现 ⬜
+- **PpuBus**：PPU总线实现 ✅
   - 支持地址范围：0x0000-0x3FFF
   - 处理图形相关的内存映射
 
-- **Ram**：内存实现 ⬜
+- **Ram**：内存实现 ✅
   - 支持基本的读写操作
   - 可配置内存大小和初始状态
 
-- **MemoryMap**：内存映射管理 ⬜
+- **MemoryMap**：内存映射管理 ✅
   - 处理地址映射和镜像
   - 管理只读/可写内存区域
 
-- **AddressDecoder**：地址解码器 ⬜
+- **AddressDecoder**：地址解码器 ✅
   - 根据地址确定对应的设备
   - 处理地址镜像和映射
 
 ### 事件系统
 
-- **EventInterface**：定义事件接口 ⬜
+- **EventInterface**：定义事件接口 ✅
   - 方法：`getName(): string` - 获取事件名称
   - 方法：`getPayload(): array` - 获取事件数据
 
-- **EventDispatcher**：事件分发器 ⬜
+- **EventDispatcher**：事件分发器 ✅
   - 方法：`addEventListener(string $eventName, callable $listener): void` - 注册事件监听器
   - 方法：`removeEventListener(string $eventName, callable $listener): void` - 移除事件监听器
   - 方法：`dispatchEvent(EventInterface $event): void` - 分发事件
 
-- **BusEvent**：总线事件类 ⬜
+- **BusEvent**：总线事件类 ✅
   - 读写事件
   - 中断事件
   - 时钟事件
 
 ### 时序控制
 
-- **ClockInterface**：时钟接口 ⬜
+- **ClockInterface**：时钟接口 ✅
   - 方法：`tick(): void` - 时钟周期推进
   - 方法：`getCycles(): int` - 获取当前周期数
 
@@ -170,62 +170,62 @@ nes-bus/
 
 ### 异常处理
 
-- **BusException**：总线异常基类 ⬜
+- **BusException**：总线异常基类 ✅
   - 处理一般总线错误
 
-- **MemoryAccessException**：内存访问异常 ⬜
+- **MemoryAccessException**：内存访问异常 ✅
   - 处理非法内存访问、地址越界等问题
 
-- **TimingException**：时序异常 ⬜
+- **TimingException**：时序异常 ✅
   - 处理时序相关的错误
 
 ## 5. 完成进度规划
 
 | 模块 | 类 | 状态 | 优先级 | 依赖项 |
 |------|-----|------|--------|--------|
-| 接口 | BusInterface | ⬜ 未开始 | 最高 | 无 |
-| 接口 | MemoryInterface | ⬜ 未开始 | 高 | 无 |
-| 接口 | DeviceInterface | ⬜ 未开始 | 高 | 无 |
-| 接口 | InterruptSource | ⬜ 未开始 | 高 | 无 |
-| 接口 | ClockInterface | ⬜ 未开始 | 高 | 无 |
-| 总线 | AbstractBus | ⬜ 未开始 | 最高 | BusInterface |
-| 总线 | CpuBus | ⬜ 未开始 | 最高 | AbstractBus |
-| 总线 | PpuBus | ⬜ 未开始 | 高 | AbstractBus |
-| 内存 | Ram | ⬜ 未开始 | 高 | MemoryInterface |
-| 内存 | MemoryMap | ⬜ 未开始 | 高 | 无 |
-| 内存 | AddressDecoder | ⬜ 未开始 | 中 | 无 |
-| 事件 | EventInterface | ⬜ 未开始 | 中 | 无 |
-| 事件 | EventDispatcher | ⬜ 未开始 | 中 | EventInterface |
-| 事件 | BusEvent | ⬜ 未开始 | 中 | EventInterface |
+| 接口 | BusInterface | ✅ 已完成 | 最高 | 无 |
+| 接口 | MemoryInterface | ✅ 已完成 | 高 | 无 |
+| 接口 | DeviceInterface | ✅ 已完成 | 高 | 无 |
+| 接口 | InterruptSource | ✅ 已完成 | 高 | 无 |
+| 接口 | ClockInterface | ✅ 已完成 | 高 | 无 |
+| 总线 | AbstractBus | ✅ 已完成 | 最高 | BusInterface |
+| 总线 | CpuBus | ✅ 已完成 | 最高 | AbstractBus |
+| 总线 | PpuBus | ✅ 已完成 | 高 | AbstractBus |
+| 内存 | Ram | ✅ 已完成 | 高 | MemoryInterface |
+| 内存 | MemoryMap | ✅ 已完成 | 高 | 无 |
+| 内存 | AddressDecoder | ✅ 已完成 | 中 | 无 |
+| 事件 | EventInterface | ✅ 已完成 | 中 | 无 |
+| 事件 | EventDispatcher | ✅ 已完成 | 中 | EventInterface |
+| 事件 | BusEvent | ✅ 已完成 | 中 | EventInterface |
 | 时序 | CycleCounter | ⬜ 未开始 | 中 | ClockInterface |
 | 时序 | TimingController | ⬜ 未开始 | 中 | ClockInterface |
-| 异常 | BusException | ⬜ 未开始 | 中 | 无 |
-| 异常 | MemoryAccessException | ⬜ 未开始 | 中 | BusException |
-| 异常 | TimingException | ⬜ 未开始 | 中 | BusException |
+| 异常 | BusException | ✅ 已完成 | 中 | 无 |
+| 异常 | MemoryAccessException | ✅ 已完成 | 中 | BusException |
+| 异常 | TimingException | ✅ 已完成 | 中 | BusException |
 
 ## 6. 实施步骤
 
-1. **阶段1：基础接口与结构** ⬜
+1. **阶段1：基础接口与结构** ✅
    - 实现BusInterface接口
    - 实现MemoryInterface接口
    - 实现DeviceInterface接口
    - 实现异常处理类
    
-2. **阶段2：核心总线实现** ⬜
+2. **阶段2：核心总线实现** ✅
    - 实现AbstractBus抽象类
    - 实现基础的CpuBus
    - 实现基础的Ram实现
 
-3. **阶段3：内存映射** ⬜
+3. **阶段3：内存映射** ✅
    - 实现MemoryMap
    - 实现AddressDecoder
    - 完善CpuBus的内存映射支持
 
-4. **阶段4：中断处理** ⬜
+4. **阶段4：中断处理** ✅
    - 实现InterruptSource接口
    - 在CpuBus中实现中断处理逻辑
 
-5. **阶段5：PPU总线** ⬜
+5. **阶段5：PPU总线** ✅
    - 实现PpuBus
    - 实现PPU相关的内存映射
 
@@ -234,7 +234,7 @@ nes-bus/
    - 实现CycleCounter
    - 实现TimingController
 
-7. **阶段7：事件系统** ⬜
+7. **阶段7：事件系统** ✅
    - 实现EventInterface
    - 实现EventDispatcher
    - 实现BusEvent
